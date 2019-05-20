@@ -1,0 +1,124 @@
+@mixin abs-center{
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@mixin retina-div($file, $type, $width, $height){
+	width: $width;
+	height: $height;
+	background-image: url('#{$file}.#{$type}');
+	background-size: 100% 100%;
+	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    		background-image: url('#{$file}@2x.#{$type}');
+			background-size: 100% 100%;
+	}
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@function rem($size) {
+	@return ($size / 16 * 1rem);
+}
+
+@function em($size) {
+	@return ($size / 16 * 1em);
+}
+
+%visuallyhidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+@mixin gpu {
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  backface-visibility: hidden;
+  perspective: 1000;
+  transform: translate3d(0, 0, 0);
+}
+
+@mixin raft($rule, $value, $med:false, $mob:false){
+	#{$rule}: $value/$compW*100vw;
+	@media(min-width: #{$compW}px) {
+		#{$rule}: #{$value}px;
+	}
+	@if($med){
+		//optional biggen at medium widths
+		@media(max-width: $medium) {
+			#{$rule}: $value/1400*60vw;
+		}
+	}
+	@if($mob){
+		//optional biggen at mobile widths
+		@media(max-width: $mobile) {
+			#{$rule}: $value/1000*75vw;
+			/*@media(orientation: landscape) {
+				#{$rule}: $value/$mobileW*100vw*$oScale;
+			}*/
+		}
+	}
+}
+
+@mixin raftV($rule, $value, $mobH:false){
+	//for vertical properties on fixed height pages
+	#{$rule}: $value/$compH*100vh;
+	@media(min-width: #{$compW}px) {
+		#{$rule}: #{$value}px;
+	}
+	@if($mobH) {
+		@media(max-width: $mobile) {
+			#{$rule}: $value/$mobileW*50vw;
+			@media(orientation: landscape) {
+				#{$rule}: $value/$mobileW*50vh;
+			}
+		}
+	}
+}
+
+@mixin raftWH($width, $height) {
+	@media(min-width: $desktop) {
+		width: $width/$compW*100vw;
+	  max-width: #{$width}px;
+	  height: $height/$compW*100vw;
+	  max-height: #{$height}px;
+	}
+}
+
+@mixin raftM($rule, $value) {
+	@media(max-width: $mobile) {
+		#{$rule}: $value/$mobileW*100vw;
+	}
+}
+
+@mixin raftMV($rule, $value) {
+	//for vertical properties on fixed height pages
+	@media(max-width: $mobile) {
+		#{$rule}: $value/$mobileH*100vh;
+	}
+}
+
+
+@function sqrt($r) {
+  $x0: 1;
+  $x1: $x0;
+
+  @for $i from 1 through 10 {
+    $x1: $x0 - ($x0 * $x0 - abs($r)) / (2 * $x0);
+    $x0: $x1;
+  }
+
+  @return $x1;
+}

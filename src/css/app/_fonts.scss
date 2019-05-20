@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "Lato Regular";
+  font-display: swap;
+  src: url("../fonts/Lato-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Lato Bold";
+  font-display: swap;
+  src: url("../fonts/Lato-Bold.ttf");
+}
+
+@mixin font-lato-regular {
+  font-family: 'Lato Regular', sans-serif;
+  font-weight: 400;
+}
+
+@mixin font-lato-bold {
+  font-family: 'Lato Bold', sans-serif;
+  font-weight: 700;
+}

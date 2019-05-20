@@ -1,0 +1,62 @@
+@keyframes disco {
+  0% {
+    border-color: $fuschia;
+  }
+  25% {
+    border-color: $green;
+  }
+  50% {
+    border-color: $teal;
+  }
+  75% {
+    border-color: $red;
+  }
+  100% {
+    border-color: $fuschia;
+  }
+}
+
+@keyframes textDisco {
+  0% {
+    color: $fuschia;
+  }
+  25% {
+    color: $green;
+  }
+  50% {
+    color: $teal;
+  }
+  75% {
+    color: $red;
+  }
+  100% {
+    color: $fuschia;
+  }
+}
+
+@keyframes svgDisco {
+  0% {
+    fill: $fuschia;
+  }
+  25% {
+    fill: $green;
+  }
+  50% {
+    fill: $teal;
+  }
+  75% {
+    fill: $red;
+  }
+  100% {
+    fill: $fuschia;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

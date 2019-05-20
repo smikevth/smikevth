@@ -1,0 +1,50 @@
+#project {
+  margin: auto;
+  width: 80%;
+  padding: 10% 0;
+  animation: fadeIn 0.3s ease-in-out;
+  animation-fill-mode: both;
+  img {
+    width: 50%;
+    @media(max-width: $medium) {
+      display: block;
+      @include raft("margin-bottom", 80);
+      width: 100%;
+    }
+  }
+  .copy {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 5%;
+    @media(max-width: $medium) {
+      width: 100%;
+    }
+    h1 {
+      text-transform: uppercase;
+      @include raft("font-size", 60, true, true);
+      letter-spacing: 0.05em;
+      @include raft("margin-bottom", 40, true, true);
+    }
+    p {
+      @include raft("font-size", 45, true, true);
+      @include raft("margin-bottom", 40, true, true);
+    }
+    .link {
+      color: $fuschia;
+      @include raft("font-size", 33, true, true);
+      @at-root {
+        .ua-desktop {
+          #project {
+            .copy {
+              .link:hover {
+                animation: textDisco 5s ease-in-out infinite;
+                animation-fill-mode: both;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "name": "smikevth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.build.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^8.6.4",
+    "babel-core": "^6.26.3",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-preset-env": "^1.7.0",
+    "browser-sync": "^2.26.3",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-babel": "^7.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.7.0",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-preprocess": "^3.0.0",
+    "gulp-rev-all": "^0.9.7",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-webp": "^3.0.0",
+    "postcss-extract-media": "0.0.5",
+    "sw-precache": "^5.2.1"
+  },
+  "dependencies": {
+    "cssuseragent": "^2.1.31",
+    "fg-loadcss": "^2.0.1",
+    "jquery": "^3.3.1",
+    "modernizr-custom": "git+https://github.com/smikevth/modernizr-custom.git",
+    "requirejs": "^2.3.5"
+  }
+}

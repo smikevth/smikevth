@@ -1,0 +1,47 @@
+#footer {
+  margin-top: 0;
+  transition: margin 0.3s ease-in-out 0.01s;
+  text-align: center;
+  @include raft("margin-bottom", 75);
+  a {
+    position: relative;
+    @include raft("width", 50, true, true);
+    display: block;
+    margin: auto;
+  }
+  svg {
+    display: inline-block;
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+    width: 100%;
+    &:nth-child(2) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
+    path {
+      fill: white;
+    }
+    @at-root {
+      .ua-desktop {
+        #footer {
+          a:hover {
+            svg {
+              &:nth-child(1) {
+                opacity: 0;
+              }
+              &:nth-child(2) {
+                opacity: 1;
+                transform: scale(1.1);
+                path {
+                  animation: svgDisco 5s ease-in-out infinite;
+                  animation-fill-mode: both;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
